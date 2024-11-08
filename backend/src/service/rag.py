@@ -57,7 +57,7 @@ def query_information(retrieval_chain, query):
 def get_response(chatRequest):
     # Ruta relativa al archivo PDF
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    pdf_path = os.path.join(script_dir, "docs", "AI Engineer.pdf")
+    pdf_path = os.path.join(script_dir, "assets", "AI Engineer.pdf")
     url = "https://www.promtior.ai/service"
     
     # Inicialización de componentes
