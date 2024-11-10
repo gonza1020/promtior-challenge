@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
-from service.rag import get_response
+from src.service.rag import get_response
 
 
 class ChatRequest(BaseModel):
