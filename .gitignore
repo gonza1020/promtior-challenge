@@ -164,6 +164,7 @@ cython_debug/
 
 # dependencies
 /node_modules
+node_modules/
 /.pnp
 .pnp.js
 .yarn/install-state.gz
@@ -172,11 +173,11 @@ cython_debug/
 /coverage
 
 # next.js
-/.next/
+.next/
 /out/
 
 # production
-/build
+build
 
 # misc
 .DS_Store
