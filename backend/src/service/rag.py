@@ -28,8 +28,10 @@ def load_pdf_documents(pdf_path):
 
 def split_documents(docs, pages):
     text_splitter = RecursiveCharacterTextSplitter()
+    
     documents = text_splitter.split_documents(docs)
-    documents.extend(pages)
+    pdfInfo = pages[2]   
+    documents.append(pdfInfo)
     return documents
 
 def create_vector_store(documents, api_key):
