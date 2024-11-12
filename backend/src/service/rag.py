@@ -24,14 +24,15 @@ def load_web_documents(url):
 
 def load_pdf_documents(pdf_path):
     pdf_loader = PyPDFLoader(pdf_path)
-    return pdf_loader.load_and_split()
+    #Devuelvo solamente la pagina donde se encuentra la informacion acerca de la fundacion de Promtior.
+    return pdf_loader.load_and_split()[2]
 
-def split_documents(docs, pages):
+def split_documents(docs, page):
     text_splitter = RecursiveCharacterTextSplitter()
     
     documents = text_splitter.split_documents(docs)
-    pdfInfo = pages[2]   
-    documents.append(pdfInfo)
+    
+    documents.append(page)
     return documents
 
 def create_vector_store(documents, api_key):
@@ -66,8 +67,8 @@ def get_response(chatRequest):
     api_key = load_api_key()
     llm = initialize_llm(api_key)
     docs = load_web_documents(url)
-    pages = load_pdf_documents(pdf_path)
-    documents = split_documents(docs, pages)
+    page = load_pdf_documents(pdf_path)
+    documents = split_documents(docs, page)
     vector_store = create_vector_store(documents, api_key)
     prompt = create_prompt_template()
     retrieval_chain = create_retrieval_pipeline(llm, vector_store, prompt)
