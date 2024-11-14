@@ -34,6 +34,7 @@ Langchain provee una documentacion solida lo cual me permitio poder finalizar es
 
 
 ## 🔗 Link
+Verificar que se este ingresando con http, algunos navegadores por defecto van a rechazar la conexion al chatbot por falta de certificado.
 
 http://promtior-challenge.g7h0hmaygedzh0f8.eastus.azurecontainer.io:3000/
 
